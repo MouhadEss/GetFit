@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.
             }
 
             override fun onCancel() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
             }
 
             override fun onError(error: FacebookException?) {

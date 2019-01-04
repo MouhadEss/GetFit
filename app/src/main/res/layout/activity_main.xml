@@ -12,7 +12,7 @@
                   android:layout_height="wrap_content"
                   android:orientation="horizontal"
                   android:layout_marginTop="435dp"
-                  android:background="@android:color/darker_gray"
+
     >
         <FrameLayout
                 android:id="@+id/FrameLayout1"
@@ -27,11 +27,13 @@
                     android:visibility="gone" />
             <Button
                     android:id="@+id/fb"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:layout_width="110dp"
+                    android:drawableStart="@drawable/fbicon"
+                    android:layout_height="fill_parent"
                     android:background="#416BC1"
                     android:onClick="onClick"
-                    android:text="facebook"
+                    android:text="Login"
                     android:textColor="#ffffff"
                     android:textStyle="bold" />
         </FrameLayout>
@@ -44,16 +46,17 @@
             <com.google.android.gms.common.SignInButton
                     android:id="@+id/btn_sign_in"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="fill_parent"
                     android:layout_marginBottom="0dp"/>
             <Button
                     android:id="@+id/google"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:background="#cf4333"
+                    android:drawableStart="@drawable/googleicon"
+                    android:background="#ffff"
                     android:onClick="onClick"
-                    android:text="Gmail"
-                    android:textColor="#ffffff"
+                    android:text="Login"
+                    android:textColor="#868181"
                     android:textStyle="bold"/>
         </FrameLayout>
 
