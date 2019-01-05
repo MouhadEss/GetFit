@@ -56,6 +56,7 @@
             <EditText android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:layout_margin="5dp"
+                      android:id="@+id/poids"
                       android:hint="Poids"
                       android:gravity="center"
                       android:drawableStart="@drawable/weight"
@@ -66,22 +67,54 @@
             <EditText android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:layout_margin="5dp"
+                      android:id="@+id/tailles"
                       android:hint="Taille"
                       android:drawableStart="@drawable/height"
                       android:inputType="number"
                       android:gravity="center"
                       android:layout_gravity="center"
             />
-            <EditText android:layout_width="fill_parent"
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_marginBottom="15dp"
+                          android:layout_marginTop="5dp"
+            >
+                <ImageView android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:background="@drawable/exercise"
+                           android:layout_marginTop="15dp"
+                           android:layout_marginLeft="10dp"
+                           android:id="@+id/iconn"
+                />
+            <Spinner android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:layout_margin="5dp"
                       android:hint="Niveau Sportif"
+                      android:foregroundGravity="center"
+                      android:id="@+id/spinner"
                       android:gravity="center"
-                      android:drawableStart="@drawable/exercise"
                       android:layout_gravity="center"
 
             />
+            </LinearLayout>
         </LinearLayout>
+        <FrameLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_margin="5dp"
+                      android:background="@drawable/background_lay"
+        >
+            <Button android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_lay"
+                    android:drawableRight="@drawable/ic_btn_valid"
+                    android:text="Valide"
+                    android:onClick="onClick"
+                    android:gravity="center"
+            />
+
+        </FrameLayout>
 
 
 

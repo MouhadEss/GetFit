@@ -1,5 +1,6 @@
 package com.example.mouhadessabbane.getfit
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,8 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_formulaire.*
 import android.graphics.BitmapFactory
 import android.graphics.Bitmap
+import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import java.io.BufferedInputStream
 import java.io.ByteArrayInputStream
@@ -33,6 +36,9 @@ class FormulaireActivity : AppCompatActivity() {
         url=intent.getStringExtra("loginUser")
         loadImageFromURL(url)
         Toast.makeText(this,"connection réussite Mr/Mme:$n",Toast.LENGTH_SHORT).show()
+        var sportivite= arrayOf("Niveau Sportif","Paresseux","Normal","Actif")
+        var adapteurList= ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,sportivite)
+        spinner.adapter=adapteurList
 
 
     }
@@ -49,6 +55,13 @@ class FormulaireActivity : AppCompatActivity() {
 
                 }
             })
+
+    }
+
+    fun onClick(view:View){
+    var i =Intent(this,FatActivity::class.java)
+        startActivity(i)
+
 
     }
 

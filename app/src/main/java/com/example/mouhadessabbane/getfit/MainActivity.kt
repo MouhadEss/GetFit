@@ -1,5 +1,6 @@
 package com.example.mouhadessabbane.getfit
 
+import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
@@ -21,6 +22,9 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.net.MalformedURLException
 import java.net.URL
+import android.content.SharedPreferences
+
+
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.OnConnectionFailedListener  {
@@ -40,6 +44,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val prefs = getPreferences(Context.MODE_PRIVATE)
+        val restoredText = prefs.getInt("loginStatus", 0)
+        if (restoredText == 1) {
+            // start activity
+            go()
+            finish() // destroy login so user can't come back with back button
+        }
+
+
 
         callbackManager=CallbackManager.Factory.create()
         fb=findViewById<Button>(R.id.fb)
@@ -69,7 +83,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.
                                 name=`object`.getString("name")
                                 Log.i("name",`object`.getString("name"))
                                 Log.i("urlpic",pic)
+                                val editor = getPreferences(Context.MODE_PRIVATE).edit()
+                                editor.putInt("loginStatus", 1)// removed ""
+                                editor.commit()
                                 go()
+
                             }catch (e:JSONException){
                                 e.printStackTrace()
                             }
