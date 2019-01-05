@@ -10,9 +10,25 @@
 
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:orientation="horizontal"
-                  android:layout_marginTop="435dp"
 
+                  android:orientation="vertical">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="35dp"
+                  android:text="Getfit"
+                  android:textSize="50sp"
+                  android:textColor="#ffff"
+                  android:gravity="center"
+                  android:textStyle="italic"
+                  android:background="@color/cardview_shadow_start_color"
+                  android:fontFamily="@string/cast_ad_label"
+        />
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="400dp"
     >
         <FrameLayout
                 android:id="@+id/FrameLayout1"
@@ -60,6 +76,7 @@
                     android:textStyle="bold"/>
         </FrameLayout>
 
+    </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

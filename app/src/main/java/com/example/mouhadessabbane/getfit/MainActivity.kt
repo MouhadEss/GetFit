@@ -2,10 +2,7 @@ package com.example.mouhadessabbane.getfit
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.RestrictionsManager
-import android.support.v4.app.FragmentActivity
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -22,10 +19,8 @@ import com.google.android.gms.common.api.ResultCallback
 import com.google.android.gms.common.api.Status
 import org.json.JSONException
 import org.json.JSONObject
-import java.lang.invoke.MethodHandles
 import java.net.MalformedURLException
 import java.net.URL
-import com.google.android.gms.common.api.OptionalPendingResult
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.OnConnectionFailedListener  {
@@ -39,6 +34,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.
     lateinit var loginButton:LoginButton
     lateinit var google:Button
     lateinit var fb:Button
+    var pic="test"
+    var name="test"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,10 +61,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.
                                         "http://graph.facebook.com/$id/picture?type=large"
                                     )
                                     Log.i("profile_pic", profile_pic.toString() + "")
+                                    pic=`object`.getJSONObject("picture").getJSONObject("data").getString("url")
                                 }catch (e: MalformedURLException){
                                     e.printStackTrace()
                                 }
                                 Log.e("UserDate", `object`!!.toString())
+                                name=`object`.getString("name")
+                                Log.i("name",`object`.getString("name"))
+                                Log.i("urlpic",pic)
+                                go()
                             }catch (e:JSONException){
                                 e.printStackTrace()
                             }
@@ -75,10 +77,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.
                     })
 
                 val parameters = Bundle()
-                parameters.putString("fields", "id,name,email,gender, birthday")
+                parameters.putString("fields","id,name,picture,email,gender, birthday")
                 request.parameters = parameters
                 request.executeAsync()
+
             }
+
+
+
 
             override fun onCancel() {
 
@@ -91,6 +97,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.
 
         initializeControls();
         initializeGPlusSettings();
+
     }
 
     private fun initializeControls() {
@@ -172,9 +179,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, GoogleApiClient.
     override fun onClick(v: View?) {
         if (v === fb) {
             loginButton.performClick()
+
         } else if (v === google) {
             signIn()
+
         }
+    }
+
+    private fun go(){
+        var i=Intent(this, FormulaireActivity::class.java)
+        i.putExtra("username",name)
+        i.putExtra("loginUser",pic)
+        startActivity(i)
     }
 
     private fun updateUI(isSignedIn:Boolean){
