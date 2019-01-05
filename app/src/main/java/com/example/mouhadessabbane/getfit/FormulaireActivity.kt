@@ -7,7 +7,6 @@ import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_formulaire.*
 import android.graphics.BitmapFactory
-
 import android.graphics.Bitmap
 import android.widget.Toast
 import java.io.BufferedInputStream
@@ -21,7 +20,7 @@ import java.net.URL
 class FormulaireActivity : AppCompatActivity() {
 
 
-    var url="https://scontent-mrs1-1.xx.fbcdn.net/v/t1.0-9/16426290_1437779629567537_7836783087933175234_n.jpg?_nc_cat=106&_nc_ht=scontent-mrs1-1.xx&oh=3589eaf649737f99ade5cb4a28a870f6&oe=5CBE865C"
+    lateinit var url:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

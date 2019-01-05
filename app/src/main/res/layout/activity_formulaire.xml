@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
+        android:background="@drawable/backgg"
         tools:context=".FormulaireActivity">
     <LinearLayout android:layout_width="fill_parent"
                   android:layout_height="fill_parent"
@@ -56,58 +56,31 @@
             <EditText android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:layout_margin="5dp"
-                      android:hint="Name"
+                      android:hint="Poids"
+                      android:gravity="center"
+                      android:drawableStart="@drawable/weight"
+                      android:inputType="number"
                       android:layout_gravity="center"
-            />
-            <EditText android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_margin="5dp"
-                      android:hint="Name"
-                      android:layout_gravity="center"
-            />
-            <EditText android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_margin="5dp"
-                      android:hint="Name"
-                      android:layout_gravity="center"
-            />
-            <EditText android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_margin="5dp"
-                      android:hint="Name"
-                      android:layout_gravity="center"
-            />
-            <EditText android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_margin="5dp"
-                      android:hint="Name"
-                      android:layout_gravity="center"
-            />
-            <EditText android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_margin="5dp"
-                      android:hint="Name"
-                      android:layout_gravity="center"
-            />
-            <EditText android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_margin="5dp"
-                      android:hint="Name"
-                      android:layout_gravity="center"
-            />
-            <EditText android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_margin="5dp"
-                      android:hint="Name"
-                      android:layout_gravity="center"
-            />
-            <EditText android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_margin="5dp"
-                      android:hint="Name"
-                      android:layout_gravity="center"
-            />
 
+            />
+            <EditText android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_margin="5dp"
+                      android:hint="Taille"
+                      android:drawableStart="@drawable/height"
+                      android:inputType="number"
+                      android:gravity="center"
+                      android:layout_gravity="center"
+            />
+            <EditText android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_margin="5dp"
+                      android:hint="Niveau Sportif"
+                      android:gravity="center"
+                      android:drawableStart="@drawable/exercise"
+                      android:layout_gravity="center"
+
+            />
         </LinearLayout>
 
 
