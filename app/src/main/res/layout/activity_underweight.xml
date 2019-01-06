@@ -6,17 +6,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="@drawable/gradientshapefat"
-        tools:context=".FatActivity">
+        android:background="@drawable/gradientshapeunderweight"
+        tools:context=".UnderweightAcitivity">
 
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="Attention! Vous êtes en état d'obése"
+              android:text="Attention! Vous êtes en sous poids!"
               android:textSize="25sp"
               android:fontFamily="serif"
               android:gravity="center"
               android:textStyle="bold"
-              android:textColor="#42868f"
+              android:textColor="#795e55"
               android:layout_margin="25dp"
               android:id="@+id/imctext2"
 
@@ -27,13 +27,13 @@
             android:layout_alignParentBottom="true"
             android:text="poursuivre"
             android:drawableEnd="@drawable/ic_btn_valid"
-            android:background="@drawable/btn_lay01"
+            android:background="@drawable/btn_lay02"
             android:layout_below="@id/imcpic2"
     />
     <ImageView android:layout_width="wrap_content"
                android:id="@+id/imcpic2"
                android:layout_height="wrap_content"
-               android:background="@drawable/obese"
+               android:background="@drawable/sousweight"
                android:layout_centerHorizontal="true"
                android:layout_below="@id/imctext2"
                android:layout_marginTop="-18dp"

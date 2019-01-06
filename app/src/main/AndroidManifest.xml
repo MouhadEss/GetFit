@@ -35,15 +35,19 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity android:name=".FormulaireActivity">
-
         </activity>
         <activity android:name=".FatActivity">
         </activity>
         <activity android:name=".NormalActivity">
+        </activity>
+        <activity android:name=".UnderweightAcitivity">
+        </activity>
+        <activity android:name=".ObeseActivity">
         </activity>
     </application>
 

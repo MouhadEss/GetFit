@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@drawable/gradientshapeobese"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="@drawable/gradientshapefat"
-        tools:context=".FatActivity">
+        tools:context=".ObeseActivity">
 
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="Attention! Vous êtes en état d'obése"
+              android:text="Attention! Vous êtes obése"
               android:textSize="25sp"
-              android:fontFamily="serif"
               android:gravity="center"
               android:textStyle="bold"
-              android:textColor="#42868f"
+              android:fontFamily="serif"
+              android:textColor="#445760"
               android:layout_margin="25dp"
-              android:id="@+id/imctext2"
-
+              android:id="@+id/imctext"
     />
     <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,18 +27,16 @@
             android:layout_alignParentBottom="true"
             android:text="poursuivre"
             android:drawableEnd="@drawable/ic_btn_valid"
-            android:background="@drawable/btn_lay01"
+            android:background="@drawable/btn_lay03"
             android:layout_below="@id/imcpic2"
     />
     <ImageView android:layout_width="wrap_content"
-               android:id="@+id/imcpic2"
+               android:id="@+id/imcpic"
                android:layout_height="wrap_content"
-               android:background="@drawable/obese"
+               android:background="@drawable/overobese"
                android:layout_centerHorizontal="true"
-               android:layout_below="@id/imctext2"
+               android:layout_below="@+id/imctext"
                android:layout_marginTop="-18dp"
-
     />
-
 
 </RelativeLayout>

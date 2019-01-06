@@ -18,9 +18,17 @@
     <color name="col2">#bed2c8</color>
     <color name="col3">#e2edd4</color>
 
-    <color name="col4">#b79a9a</color>
-    <color name="col5">#f95b58</color>
-    <color name="col6">#f1e3e2</color>
+    <color name="col4">#37b3e4</color>
+    <color name="col5">#9f59d1f5</color>
+    <color name="col6">#f301c0ff</color>
+
+    <color name="col7">#b79a9a</color>
+    <color name="col8">#efcecd</color>
+    <color name="col9">#f1e3e2</color>
+
+    <color name="col10">#0d9dea</color>
+    <color name="col11">#a4c6d4</color>
+    <color name="col12">#8db2bf</color>
 
     <color name="black_overlay">#66000000</color>
 </resources>
