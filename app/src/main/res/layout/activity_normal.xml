@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@drawable/normal"
+        android:background="@drawable/gradientshape"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         tools:context=".NormalActivity">
+
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="U r good broo"
-              android:textSize="36sp"
+              android:text="Félictation! Vous êtes en bon état!"
+              android:textSize="25sp"
               android:gravity="center"
               android:textStyle="bold"
+              android:fontFamily="serif"
               android:textColor="#1e6b3d"
               android:layout_margin="25dp"
+              android:id="@+id/imctext"
     />
     <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="50dp"
+            android:layout_margin="25dp"
             android:layout_alignParentBottom="true"
             android:text="poursuivre"
             android:drawableEnd="@drawable/ic_btn_valid"
             android:background="@drawable/btn_lay"
+            android:layout_below="@id/imcpic"
     />
+    <ImageView android:layout_width="wrap_content"
+               android:id="@+id/imcpic"
+               android:layout_height="wrap_content"
+               android:background="@drawable/bonetat"
+               android:layout_centerHorizontal="true"
+               android:layout_below="@+id/imctext"
+               android:layout_marginTop="-18dp"
+               />
 
 </RelativeLayout>

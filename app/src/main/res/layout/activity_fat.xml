@@ -6,24 +6,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="@drawable/fat03"
+        android:background="@drawable/gradientshape2"
         tools:context=".FatActivity">
+
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="U need to move broo"
-              android:textSize="36sp"
+              android:text="Attention! Vous êtes en état d'obése"
+              android:textSize="25sp"
+              android:fontFamily="serif"
               android:gravity="center"
               android:textStyle="bold"
-              android:textColor="#fff"
+              android:textColor="#b31613"
               android:layout_margin="25dp"
+              android:id="@+id/imctext2"
+
     />
     <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="50dp"
+            android:layout_margin="15dp"
             android:layout_alignParentBottom="true"
             android:text="poursuivre"
             android:drawableEnd="@drawable/ic_btn_valid"
             android:background="@drawable/btn_lay01"
+            android:layout_below="@id/imcpic2"
+    />
+    <ImageView android:layout_width="wrap_content"
+               android:id="@+id/imcpic2"
+               android:layout_height="wrap_content"
+               android:background="@drawable/obese"
+               android:layout_centerHorizontal="true"
+               android:layout_below="@id/imctext2"
+               android:layout_marginTop="-18dp"
+
     />
 
 
