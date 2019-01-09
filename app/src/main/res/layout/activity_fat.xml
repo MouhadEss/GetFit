@@ -26,6 +26,7 @@
             android:layout_margin="15dp"
             android:layout_alignParentBottom="true"
             android:text="poursuivre"
+            android:onClick="onclickF"
             android:drawableEnd="@drawable/ic_btn_valid"
             android:background="@drawable/btn_lay01"
             android:layout_below="@id/imcpic2"

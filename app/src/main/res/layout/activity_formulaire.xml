@@ -11,6 +11,7 @@
                   android:layout_height="fill_parent"
                   android:orientation="vertical"
                   android:layout_margin="15dp"
+                  android:layout_marginBottom="50dp"
     >
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
@@ -60,6 +61,7 @@
                       android:hint="Poids"
                       android:gravity="center"
                       android:drawableStart="@drawable/weight"
+                      android:drawableEnd="@drawable/kg"
                       android:inputType="number"
                       android:layout_gravity="center"
 
@@ -69,6 +71,7 @@
                       android:layout_margin="5dp"
                       android:id="@+id/tailles"
                       android:hint="Taille"
+                      android:drawableEnd="@drawable/cm"
                       android:drawableStart="@drawable/height"
                       android:inputType="number"
                       android:gravity="center"
@@ -98,11 +101,60 @@
 
             />
             </LinearLayout>
+            <RadioGroup android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="5dp"
+                        android:id="@+id/mode"
+
+            >
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="Mode alimentaire"
+                          android:gravity="center"
+                          android:textStyle="bold"
+                          android:textSize="20sp"
+                          android:drawableStart="@drawable/diet"
+                          android:layout_marginLeft="10dp"
+                          android:layout_marginBottom="15dp"
+                />
+                <RadioButton android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:text="Végétarien"
+                             android:id="@+id/vegetarien"
+                             android:textSize="20sp"
+                             android:textStyle="italic"
+                             android:fontFamily="serif-monospace"
+                             android:gravity="center"
+
+                />
+                <RadioButton android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:text="Végétalien"
+                             android:id="@+id/vegetalien"
+                             android:textSize="20sp"
+                             android:textStyle="italic"
+                             android:fontFamily="serif-monospace"
+                             android:gravity="center"
+
+                />
+                <RadioButton android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:text="Je mange tout"
+                             android:id="@+id/JMT"
+                             android:textSize="20sp"
+                             android:textStyle="italic"
+                             android:fontFamily="serif-monospace"
+                             android:gravity="center"
+
+                />
+            </RadioGroup>
         </LinearLayout>
         <FrameLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:orientation="vertical"
                       android:layout_margin="5dp"
+                     android:layout_marginBottom="25dp"
                       android:background="@drawable/background_lay"
         >
             <Button android:layout_width="match_parent"

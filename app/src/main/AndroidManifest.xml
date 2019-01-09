@@ -9,7 +9,7 @@
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher_getfit"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@mipmap/ic_launcher_getfit"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <meta-data
@@ -48,6 +48,8 @@
         <activity android:name=".UnderweightAcitivity">
         </activity>
         <activity android:name=".ObeseActivity">
+        </activity>
+        <activity android:name=".ResultActivity">
         </activity>
     </application>
 

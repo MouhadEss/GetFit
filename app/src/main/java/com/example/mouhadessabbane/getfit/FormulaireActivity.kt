@@ -12,6 +12,7 @@ import android.graphics.Bitmap
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_normal.view.*
 import java.io.BufferedInputStream
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -59,9 +60,46 @@ class FormulaireActivity : AppCompatActivity() {
     }
 
     fun onClick(view:View){
-    var i =Intent(this,FatActivity::class.java)
-        startActivity(i)
+        var modeAli="non specifier"
+        if (vegetarien.isChecked) {
+            modeAli="vegetarien"
+        } else if (vegetalien.isChecked){
+            modeAli="vegetalien"
+        }else if(JMT.isChecked){
+            modeAli="Mr/Mme tout le monde"
+        }
+        insererBd(intent.getStringExtra("username"),intent.getStringExtra("loginUser"),poids.text.toString().toFloat(),tailles.text.toString().toFloat(),spinner.selectedItemPosition.toString(),modeAli)
+     var p=poids.text
+        var t=tailles.text
+        var tm=t.toString().toDouble()*0.01
+        var imc:Double=p.toString().toDouble()/(tm.toString().toDouble()*tm.toString().toDouble())
+        Log.i("imc",imc.toString())
+        if(imc<18.5){
+            var i=Intent(this,UnderweightAcitivity::class.java)
+            i.putExtra("imc",imc.toString())
+            startActivity(i)
+        }else if (imc>=18.5 && imc<24.9){
+            var i=Intent(this,NormalActivity::class.java)
+            i.putExtra("imc",imc.toString())
+            startActivity(i)
+        }else if (imc>=24.9 && imc<29.9){
+            var i=Intent(this,FatActivity::class.java)
+            i.putExtra("imc",imc.toString())
+            startActivity(i)
+        }else if (imc>=29.9 && imc<39.9){
+            var i=Intent(this,ObeseActivity::class.java)
+            i.putExtra("imc",imc.toString())
+            startActivity(i)
+        }else Toast.makeText(this,"taille ou poid incorrect",Toast.LENGTH_LONG).show()
 
+    }
+
+    private fun insererBd(name:String,url:String,poid:Float,taille:Float,nivS:String,modal:String) {
+    if (poids.text.isEmpty() && tailles.text.isEmpty())Toast.makeText(this,"entrer le poid et la taille",Toast.LENGTH_SHORT).show()
+        else{
+        val controller=ClientController(this)
+        val result=controller.inseretContent(name,url,poid,taille,nivS,modal)
+    }
 
     }
 

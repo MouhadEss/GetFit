@@ -2,6 +2,7 @@ package com.example.mouhadessabbane.getfit
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 
 class ClientController {
@@ -16,6 +17,7 @@ class ClientController {
     val poidClient="Poids"
     val tailleClient="Tailles"
     val niveauSportif="NiveauSportif"
+    val modeAli="ModeAlimentaire"
 
     val dbname="gestionClient"
 
@@ -24,13 +26,19 @@ class ClientController {
         db=helper.writableDatabase
     }
 
-    fun inseretContent(name:String,url:String,poid:Float,taille:Float):Double{
+    fun inseretContent(name:String,url:String,poid:Float,taille:Float,nivS:String,modal:String):Double{
         var values=ContentValues()
         values.put(nameClient,name)
         values.put(urlPic,url)
         values.put(poidClient,poid)
         values.put(tailleClient,taille)
+        values.put(niveauSportif,nivS)
+        values.put(modeAli,modal)
         return db.insert(dbtable,null,values).toDouble()
+    }
+
+    fun affichertout(): Cursor {
+        return db!!.rawQuery("Select $nameClient,$urlPic from $dbtable where ID=1",null)
     }
 
 }

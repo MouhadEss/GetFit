@@ -12,10 +12,11 @@ class DbHelper(context: Context?, name: String?, factory: SQLiteDatabase.CursorF
     val poidClient="Poids"
     val tailleClient="Tailles"
     val niveauSportif="NiveauSportif"
+    val modeAli="ModeAlimentaire"
 
 
     override fun onCreate(db: SQLiteDatabase?) {
-        db!!.execSQL("Create Table $dbtable ($id INTEGER PRIMARY KEY AUTOINCREMENT  , $nameClient TEXT NOT NULL, $urlPic TEXT NOT NULL, $poidClient FLOAT NOT NULL, $tailleClient FLOAT NOT NULL);")
+        db!!.execSQL("Create Table $dbtable ($id INTEGER PRIMARY KEY AUTOINCREMENT  , $nameClient TEXT NOT NULL, $urlPic TEXT NOT NULL, $poidClient FLOAT NOT NULL, $tailleClient FLOAT NOT NULL, $niveauSportif TEXT NOT NULL, $modeAli TEXT NOT NULL);")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
